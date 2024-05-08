@@ -1,7 +1,12 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["Puttalam", "Colombo", "Nuwara Eliya", "Kandy", "Kalpity"];
+interface Props {
+  items: string[];
+  headings: string;
+  onSelectItem: (item: string) => void;
+}
+
+function ListGroup({ items, headings, onSelectItem}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
@@ -19,6 +24,7 @@ function ListGroup() {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}
