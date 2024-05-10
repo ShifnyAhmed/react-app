@@ -11,7 +11,7 @@ const Card = ({ image, name, price }: Props) => {
     <div className="card">
       <img className="card-image" src={image} alt="Food Pic" />
       <h2 className="card-foodname">{name}</h2>
-      <p className="card-price">Price : {price}</p>
+      <p className="card-price"><b>Price : </b>{price}</p>
     </div>
   );
 };
