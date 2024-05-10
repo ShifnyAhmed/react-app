@@ -3,6 +3,7 @@ import FishCurry from "./assets/menu-1.png";
 import Noodles from "./assets/menu-2.png";
 import Biriyani from "./assets/menu-3.png";
 import PaneerCurry from "./assets/menu-4.png";
+import Billing from "./components/Billing";
 
 function App() {
   const foods = [
@@ -16,7 +17,12 @@ function App() {
     <Card image={food.image} name={food.name} price={food.price} />
   ));
 
-  return <>{listItems}</>;
+  return (
+    <>
+      {listItems}
+      <Billing />
+    </>
+  );
 }
 
 export default App;
