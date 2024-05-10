@@ -1,13 +1,12 @@
-import Body from "./components/Body";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Card from "./components/Card";
 
 function App() {
   return (
     <>
-      <Header />
-      <Body />
-      <Footer />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </>
   );
 }
