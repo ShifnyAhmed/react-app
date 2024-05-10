@@ -5,15 +5,22 @@ import Biriyani from "./assets/menu-3.png";
 import PaneerCurry from "./assets/menu-4.png";
 
 function App() {
-  return (
-    <>
-      <Card image={FishCurry} name="Fish Curry" price="Rs 650" />
-      <Card image={Noodles} name="Noodles" price="Rs 1299" />
-      <Card image={Biriyani} name="Biriyani" price="1450" />
-      <Card image={PaneerCurry} name="Paneer Curry" price="700" />
-    <Card />
-    </>
-  );
+  const fishCurry = { image: FishCurry, name: "Fish Curry", price: "Rs 650" };
+  const noodles = { image: Noodles, name: "Noodles", price: "Rs 1299" };
+  const biriyani = { image: Biriyani, name: "Biriyani", price: "Rs 1450" };
+  const paneerCurry = {
+    image: PaneerCurry,
+    name: "Paneer Curry",
+    price: "Rs 700",
+  };
+
+  const foods = [fishCurry, noodles, biriyani, paneerCurry];
+
+  const listItems = foods.map((food) => (
+    <Card image={food.image} name={food.name} price={food.price} />
+  ));
+
+  return <>{listItems}</>;
 }
 
 export default App;
