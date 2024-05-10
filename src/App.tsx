@@ -1,27 +1,14 @@
-import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
-  const handleOnClickButton = () => {
-    setAlertVisibility(true);
-  };
-  const closeAlertOnCLick = () => {
-    setAlertVisibility(false);
-  };
-
-  const [alertVisible, setAlertVisibility] = useState(false);
-
   return (
-    <div>
-      {alertVisible && (
-        <Alert onClick={closeAlertOnCLick}>
-          Hello <h1>Mister</h1>
-        </Alert>
-      )}
-
-      <Button onClick={handleOnClickButton}>Click Me Nigga!</Button>
-    </div>
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
   );
 }
 
