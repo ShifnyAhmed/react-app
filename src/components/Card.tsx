@@ -1,4 +1,5 @@
 import Ramen from "../assets/food1.png";
+import Button from "./Button";
 
 interface Props {
   image: any;
@@ -11,7 +12,11 @@ const Card = ({ image, name, price }: Props) => {
     <div className="card">
       <img className="card-image" src={image} alt="Food Pic" />
       <h2 className="card-foodname">{name}</h2>
-      <p className="card-price"><b>Price : </b>{price}</p>
+      <p className="card-price">
+        <b>Price : </b>
+        {price}
+      </p>
+      <Button onClick={() => handleOnClick(name)} />
     </div>
   );
 };
@@ -22,4 +27,7 @@ Card.defaultProps = {
   price: "Default",
 };
 
+const handleOnClick = (name: string) => {
+  console.log(name + " Added To Cart");
+};
 export default Card;
