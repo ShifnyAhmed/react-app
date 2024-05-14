@@ -5,6 +5,7 @@ import Biriyani from "./assets/menu-3.png";
 import PaneerCurry from "./assets/menu-4.png";
 import Billing from "./components/Billing";
 import FavouriteFood from "./components/FavouriteFood";
+import Customer from "./components/Customer";
 
 function App() {
   const foods = [
@@ -22,10 +23,12 @@ function App() {
     <>
       {listItems}
       <Billing />
-      <br />
-      <br />
-      <br />
       <FavouriteFood />
+
+      <br />
+      <br />
+      <br />
+      <Customer />
     </>
   );
 }
