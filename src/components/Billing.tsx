@@ -21,12 +21,21 @@ function Billing() {
 
   return (
     <div className="card-billing">
-      <input className="billing-name" value={name} onChange={handleNameChange} />
+      <input
+        className="billing-name"
+        value={name}
+        onChange={handleNameChange}
+      />
       <p className="billing-details">
         Name: {name === "Enter Name" ? "" : name}
       </p>
 
-      <input className="billing-quantity" value={quantity} onChange={handleQuantityChange} type="number" />
+      <input
+        className="billing-quantity"
+        value={quantity}
+        onChange={handleQuantityChange}
+        type="number"
+      />
       <p className="billing-details">
         Quantity:{" "}
         {quantity < 1
@@ -34,7 +43,11 @@ function Billing() {
           : quantity}
       </p>
 
-      <select className="billing-payment" value={paymentMethod} onChange={handlePaymentMethodChange}>
+      <select
+        className="billing-payment"
+        value={paymentMethod}
+        onChange={handlePaymentMethodChange}
+      >
         <option value="select">Select a Payment Option</option>
         <option value="Visa">Visa</option>
         <option value="MasterCard">MasterCard</option>

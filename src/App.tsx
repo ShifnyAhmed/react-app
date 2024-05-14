@@ -4,6 +4,7 @@ import Noodles from "./assets/menu-2.png";
 import Biriyani from "./assets/menu-3.png";
 import PaneerCurry from "./assets/menu-4.png";
 import Billing from "./components/Billing";
+import FavouriteFood from "./components/FavouriteFood";
 
 function App() {
   const foods = [
@@ -21,6 +22,10 @@ function App() {
     <>
       {listItems}
       <Billing />
+      <br />
+      <br />
+      <br />
+      <FavouriteFood />
     </>
   );
 }
