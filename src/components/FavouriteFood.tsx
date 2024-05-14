@@ -1,58 +1,41 @@
 import React, { useState } from "react";
 
 function FavouriteFood() {
-  const [food, setFood] = useState({
-    FoodName: "MilkShake",
-    FoodPrice: 500,
-    FoodType: "Drink",
-  });
+  const [foods, setFoods] = useState(["Burger", "Submarine", "Nasi Goreng"]);
 
-  function handleFoodNameChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setFood((f) => ({ ...f, FoodName: event.target.value }));
+  function handleAddFood() {
+    const foodInput = document.getElementById(
+      "foodInput"
+    ) as HTMLInputElement | null;
+    if (foodInput) {
+      const newFood = foodInput.value;
+      foodInput.value = ""; // Clear the input value
+
+      if (newFood !== "") setFoods((f) => [...f, newFood]);
+    }
   }
-
-  function handleFoodTypeChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setFood((f) => ({ ...f, FoodType: event.target.value }));
-  }
-
-  function handleFoodPriceChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setFood((f) => ({ ...f, FoodPrice: parseInt(event.target.value) }));
+  function handleRemoveFood(index: number) {
+    setFoods(foods.filter((element, i) => i !== index));
   }
 
   return (
     <div>
-      <h3>
-        Your Favourite is {food.FoodName} which is a {food.FoodType} and it
-        costs Rs.{food.FoodPrice}
-      </h3>
+      <h2> List of favorite foods</h2>
 
-      <b>Enter Your Favourite Food: </b>
-      <br />
+      <ul>
+        {foods.map((food, index) => (
+          <li key={index} onClick={() => handleRemoveFood(index)}>
+            {food}
+          </li>
+        ))}
+      </ul>
+
       <input
         type="text"
-        value={food.FoodName}
-        onChange={handleFoodNameChange}
+        id="foodInput"
+        placeholder="Enter Your Favorite Food"
       />
-      <br />
-      <br />
-
-      <b>Enter The Type: </b>
-      <br />
-      <input
-        type="text"
-        value={food.FoodType}
-        onChange={handleFoodTypeChange}
-      />
-      <br />
-      <br />
-
-      <b>Enter The Price: </b>
-      <br />
-      <input
-        type="number"
-        value={food.FoodPrice}
-        onChange={handleFoodPriceChange}
-      />
+      <button onClick={handleAddFood}> Add Food</button>
     </div>
   );
 }
